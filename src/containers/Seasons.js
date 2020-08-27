@@ -22,6 +22,11 @@ class Seasons extends React.Component {
     const { show } = location.state;
     return seasons.length === 0 ? <div className="">Please wait</div> : (
       <div className="container">
+        <div>
+          <Link to="/" className="btn btn-link mt-3">
+            Back to Home
+          </Link>
+        </div>
         <div className="card-deck d-flex justify-content-between mt-4">
           {seasons.map(season => (
             <Link

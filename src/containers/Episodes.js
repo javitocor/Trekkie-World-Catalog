@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getEpisodes, changeFilter } from '../actions/index';
 import EpisodeFilter from '../components/EpisodeFilter';
 import episode from '../style/Episodes.module.css';
@@ -32,9 +33,12 @@ class Episodes extends React.Component {
     const filteredEpisodes = FilterEpisodes(filter, episodes);
     return episodes.length === 0 ? <div className={episode.wait}>Please wait</div> : (
       <div className="m-4">
-
-        <EpisodeFilter handleFilterChange={this.handleFilterChange} />
-
+        <div>
+          <Link to="/" className="btn btn-link mt-3">
+            Back to Home
+          </Link>
+          <EpisodeFilter handleFilterChange={this.handleFilterChange} />
+        </div>
         <div className={episode.episodes}>
           {filteredEpisodes.map(episode => (
             <div key={episode.id} className="card text-white bg-secondary mb-3" style={{ width: '15rem' }}>
