@@ -10,27 +10,29 @@ class Seasons extends React.Component {
   }
 
   componentDidMount() {
-    const { state } = this.props;
-    getSeasons(state.show);
+    const { show } = this.props.location.state;
+    const { getSeasons } = this.props;
+    getSeasons(show);
   }
 
   render() {
-    const { seasons, state } = this.props;
-    return (
+    const { seasons } = this.props;
+    const { show } = this.props.location.state;
+    return seasons.length === 0 ? <div className="">Please wait</div> : (
       <div>
         {seasons.map(season => (
           <Link
             key={season.id}
             to={{
-              pathname: `/TVShows/${state.show}/episodes`,
+              pathname: `/TVShows/${show}/episodes`,
               state: {
-                show: state.show,
+                show,
               },
             }}
             className=""
           >
             <div className="card text-white bg-primary mb-3" style={{ width: '18rem' }}>
-              <div className="card-header">{state.show}</div>
+              <div className="card-header">{show}</div>
               <div className="card-body">
                 <h5 className="card-title">
                   Season:
@@ -61,8 +63,11 @@ class Seasons extends React.Component {
 }
 
 Seasons.propTypes = {
-  state: PropTypes.string.isRequired,
+  location: PropTypes.shape({
+    state: PropTypes.shape({ show: PropTypes.string.isRequired }),
+  }).isRequired,
   seasons: PropTypes.instanceOf(Object).isRequired,
+  getSeasons: PropTypes.func.isRequired,
 };
 const mapStateToProps = state => ({
   seasons: state.seasons,

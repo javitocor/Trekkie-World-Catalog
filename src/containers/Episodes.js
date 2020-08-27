@@ -9,13 +9,14 @@ class Episodes extends React.Component {
   }
 
   componentDidMount() {
-    const { state } = this.props;
-    getEpisodes(state.show);
+    const { show } = this.props.location.state;
+    const { getEpisodes } = this.props;
+    getEpisodes(show);
   }
 
   render() {
-    const { episodes, state } = this.props;
-    return (
+    const { episodes } = this.props;
+    return episodes.length === 0 ? <div>Please wait</div> : (
       <div>
         {episodes.map(episode => (
           <div key={episode.id} className="card" style={{ width: '18rem' }}>
@@ -89,8 +90,11 @@ class Episodes extends React.Component {
 }
 
 Episodes.propTypes = {
-  state: PropTypes.string.isRequired,
+  location: PropTypes.shape({
+    state: PropTypes.shape({ show: PropTypes.string.isRequired }),
+  }).isRequired,
   episodes: PropTypes.instanceOf(Object).isRequired,
+  getEpisodes: PropTypes.func.isRequired,
 };
 const mapStateToProps = state => ({
   episodes: state.episodes,

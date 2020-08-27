@@ -2,17 +2,17 @@ import 'regenerator-runtime/runtime';
 
 function getShowId(show) {
   if (show === 'TOS') {
-    return 490;
+    return '490';
   } if (show === 'TNG') {
-    return 491;
+    return '491';
   } if (show === 'VOY') {
-    return 492;
+    return '492';
   } if (show === 'DS9') {
-    return 493;
+    return '493';
   } if (show === 'ENT') {
-    return 714;
+    return '714';
   } if (show === 'DIS') {
-    return 7480;
+    return '7480';
   }
   return 0;
 }

@@ -12,7 +12,7 @@ export const getEpisodes = show => async dispatch => {
   });
 };
 
-export const getSeasons = show => async dispatch => {
+export const getSeasons = show => dispatch => {
   callAPI(show, 0).then(data => {
     dispatch({
       type: GET_SEASONS,
