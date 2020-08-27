@@ -19,44 +19,47 @@ class Seasons extends React.Component {
     const { seasons } = this.props;
     const { show } = this.props.location.state;
     return seasons.length === 0 ? <div className="">Please wait</div> : (
-      <div>
-        {seasons.map(season => (
-          <Link
-            key={season.id}
-            to={{
-              pathname: `/TVShows/${show}/episodes`,
-              state: {
-                show,
-              },
-            }}
-            className=""
-          >
-            <div className="card text-white bg-primary mb-3" style={{ width: '18rem' }}>
-              <div className="card-header">{show}</div>
-              <div className="card-body">
-                <h5 className="card-title">
-                  Season:
-                  {season.number}
-                </h5>
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item">
-                    Number of Episodes:
-                    {season.episodeOrder}
-                  </li>
-                  <li className="list-group-item">
-                    Premiere:
-                    {season.premiereDate}
-                  </li>
-                  <li className="list-group-item">
-                    End Date:
-                    {season.endDate}
-                  </li>
-                </ul>
+      <div className="container">
+        <div className="card-deck d-flex justify-content-between mt-4">
+          {seasons.map(season => (
+            <Link
+              key={season.id}
+              to={{
+                pathname: `/TVShows/${show}/episodes`,
+                state: {
+                  show,
+                },
+              }}
+              className=""
+            >
+              <div className="">
+                <div className="card text-white bg-secondary mb-3" style={{ width: '20rem' }}>
+                  <div className="card-header">{show}</div>
+                  <div className="card-body">
+                    <h5 className="card-title">
+                      Season:
+                      {season.number}
+                    </h5>
+                    <ul className="list-group list-group-flush">
+                      <li className="list-group-item">
+                        Number of Episodes:
+                        {season.episodeOrder}
+                      </li>
+                      <li className="list-group-item">
+                        Premiere:
+                        {season.premiereDate}
+                      </li>
+                      <li className="list-group-item">
+                        End Date:
+                        {season.endDate}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     );
   }
