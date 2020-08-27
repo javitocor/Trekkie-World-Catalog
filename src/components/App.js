@@ -6,7 +6,7 @@ import TVShows from '../containers/TVShows';
 const App = () => (
   <Router>
     <Switch>
-      <div>
+      <div className="bg-dark">
         <Route path="/" component={Header} />
         <Route exact path="/" component={TVShows} />
         <Route path="/TVShows" exact component={} />
