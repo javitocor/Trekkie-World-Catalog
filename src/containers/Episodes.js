@@ -1,26 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getEpisodes } from '../actions/index';
+import { getEpisodes, changeFilter } from '../actions/index';
+import SeasonFilter from '../components/SeasonFilter';
 import episode from '../style/Episodes.module.css';
+import FilterEpisodes from '../helpers/FilterEpisodes';
 
 class Episodes extends React.Component {
   constructor(props) {
     super(props);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   componentDidMount() {
-    const { show } = this.props.location.state;
+    const { location } = this.props;
+    const { show } = location.state;
     const { getEpisodes } = this.props;
     getEpisodes(show);
   }
 
+  handleFilterChange(event) {
+    const { changeFilter } = this.props;
+    const season = event.target.value;
+    changeFilter(season);
+  }
+
   render() {
-    const { episodes } = this.props;
-    return episodes.length === 0 ? <div>Please wait</div> : (
+    const { episodes, filter } = this.props;
+    const filteredEpisodes = FilterEpisodes(filter, episodes);
+    return episodes.length === 0 ? <div className={episode.wait}>Please wait</div> : (
       <div className="m-4">
+
+        <SeasonFilter handleFilterChange={this.handleFilterChange} />
+
         <div className={episode.episodes}>
-          {episodes.map(episode => (
+          {filteredEpisodes.map(episode => (
             <div key={episode.id} className="card text-white bg-secondary mb-3" style={{ width: '15rem' }}>
               <img className="card-img-top" src={episode.image.original} alt="Card cap" />
               <div className="card-body">
@@ -99,14 +113,20 @@ Episodes.propTypes = {
   }).isRequired,
   episodes: PropTypes.instanceOf(Object).isRequired,
   getEpisodes: PropTypes.func.isRequired,
+  filter: PropTypes.instanceOf(Object).isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
 const mapStateToProps = state => ({
   episodes: state.episodes,
+  filter: state.filter,
 });
 
 const mapDispatchToProps = dispatch => ({
   getEpisodes: show => {
     dispatch(getEpisodes(show));
+  },
+  changeFilter: filter => {
+    dispatch(changeFilter(filter));
   },
 });
 
