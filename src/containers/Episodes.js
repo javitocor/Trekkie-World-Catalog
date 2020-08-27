@@ -26,6 +26,8 @@ class Episodes extends React.Component {
   }
 
   render() {
+    const { location } = this.props;
+    const { number } = location.state;
     const { episodes, filter } = this.props;
     const filteredEpisodes = FilterEpisodes(filter, episodes);
     return episodes.length === 0 ? <div className={episode.wait}>Please wait</div> : (
@@ -109,11 +111,14 @@ class Episodes extends React.Component {
 
 Episodes.propTypes = {
   location: PropTypes.shape({
-    state: PropTypes.shape({ show: PropTypes.string.isRequired }),
+    state: PropTypes.shape({
+      show: PropTypes.string.isRequired,
+      number: PropTypes.number.isRequired,
+    }),
   }).isRequired,
   episodes: PropTypes.instanceOf(Object).isRequired,
   getEpisodes: PropTypes.func.isRequired,
-  filter: PropTypes.instanceOf(Object).isRequired,
+  filter: PropTypes.string.isRequired,
   changeFilter: PropTypes.func.isRequired,
 };
 const mapStateToProps = state => ({

@@ -30,6 +30,7 @@ class Seasons extends React.Component {
                 pathname: `/TVShows/${show}/episodes`,
                 state: {
                   show,
+                  number: season.number,
                 },
               }}
               className=""

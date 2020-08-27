@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from '../containers/Header';
-import TVShows from '../containers/TVShows';
+import Header from './Header';
+import TVShows from './TVShows';
 import Seasons from '../containers/Seasons';
 import Episodes from '../containers/Episodes';
 
