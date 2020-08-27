@@ -15,21 +15,43 @@ class Seasons extends React.Component {
   }
 
   render() {
-    const { seasons } = this.props;
+    const { seasons, state } = this.props;
     return (
       <div>
         {seasons.map(season => (
           <Link
             key={season.id}
             to={{
-              pathname: `/TVShows/${state.show}`,
+              pathname: `/TVShows/${state.show}/episodes`,
               state: {
-                show,
+                show: state.show,
               },
             }}
             className=""
           >
-            aaaaaa
+            <div className="card text-white bg-primary mb-3" style={{ width: '18rem' }}>
+              <div className="card-header">{state.show}</div>
+              <div className="card-body">
+                <h5 className="card-title">
+                  Season:
+                  {season.number}
+                </h5>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item">
+                    Number of Episodes:
+                    {season.episodeOrder}
+                  </li>
+                  <li className="list-group-item">
+                    Premiere:
+                    {season.premiereDate}
+                  </li>
+                  <li className="list-group-item">
+                    End Date:
+                    {season.endDate}
+                  </li>
+                </ul>
+              </div>
+            </div>
 
           </Link>
         ))}
