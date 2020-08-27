@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-function SeasonFilter(props) {
+function EpisodeFilter(props) {
   const { handleFilterChange, seasons } = props;
   const seasonsLength = seasons.length;
   const NumSeasons = [...Array(seasonsLength)].map((_, i) => i + 1);
@@ -20,7 +20,7 @@ function SeasonFilter(props) {
   );
 }
 
-SeasonFilter.propTypes = {
+EpisodeFilter.propTypes = {
   handleFilterChange: PropTypes.func.isRequired,
   seasons: PropTypes.instanceOf(Object).isRequired,
 };
@@ -29,4 +29,4 @@ const mapStateToProps = state => ({
   seasons: state.seasons,
 });
 
-export default connect(mapStateToProps)(SeasonFilter);
+export default connect(mapStateToProps)(EpisodeFilter);

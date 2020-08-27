@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getEpisodes, changeFilter } from '../actions/index';
-import SeasonFilter from '../components/SeasonFilter';
+import EpisodeFilter from '../components/EpisodeFilter';
 import episode from '../style/Episodes.module.css';
 import FilterEpisodes from '../helpers/FilterEpisodes';
 
@@ -31,7 +31,7 @@ class Episodes extends React.Component {
     return episodes.length === 0 ? <div className={episode.wait}>Please wait</div> : (
       <div className="m-4">
 
-        <SeasonFilter handleFilterChange={this.handleFilterChange} />
+        <EpisodeFilter handleFilterChange={this.handleFilterChange} />
 
         <div className={episode.episodes}>
           {filteredEpisodes.map(episode => (
