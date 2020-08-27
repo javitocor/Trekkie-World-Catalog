@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from '../containers/Header';
+import TVShows from '../containers/TVShows';
 
 const App = () => (
   <Router>
