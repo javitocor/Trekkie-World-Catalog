@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import showsReducer from './Shows';
-import episodesReducer from './Shows';
+import seasonsReducer from './Seasons';
+import episodesReducer from './Episodes';
 
 const rootReducer = combineReducers({
-  shows: showsReducer,
+  seasons: seasonsReducer,
   episodes: episodesReducer,
 });
 
