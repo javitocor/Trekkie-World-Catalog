@@ -7,7 +7,7 @@ const ShowsContainer = props => {
   const info = ShowsObject(show);
   return (
     <div className="card" style={{ width: '18rem' }}>
-      <img className="card-img-top" src="..." alt="Show cover" />
+      <img className="card-img-top" src={info.image} alt="Show cover" />
       <div className="card-body">
         <h5 className="card-title">{info.name}</h5>
         <p className="card-text">{info.description}</p>

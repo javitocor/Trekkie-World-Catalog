@@ -7,6 +7,7 @@ const ShowsObject = show => {
       seasons: '3',
       episodes: '79',
       premiered: '1966-09-08',
+      image: 'http://static.tvmaze.com/uploads/images/original_untouched/210/525135.jpg',
     };
     return object;
   } if (show === 'TNG') {
@@ -16,6 +17,7 @@ const ShowsObject = show => {
       seasons: '7',
       episodes: '178',
       premiered: '1987-09-28',
+      image: 'http://static.tvmaze.com/uploads/images/original_untouched/70/176261.jpg',
     };
     return object;
   } if (show === 'VOY') {
@@ -25,6 +27,7 @@ const ShowsObject = show => {
       seasons: '7',
       episodes: '172',
       premiered: '1995-01-16',
+      image: 'http://static.tvmaze.com/uploads/images/original_untouched/70/176260.jpg',
     };
     return object;
   } if (show === 'DS9') {
@@ -34,6 +37,7 @@ const ShowsObject = show => {
       seasons: '7',
       episodes: '176',
       premiered: '1993-01-03',
+      image: 'http://static.tvmaze.com/uploads/images/original_untouched/70/176262.jpg',
     };
     return object;
   } if (show === 'ENT') {
@@ -43,6 +47,7 @@ const ShowsObject = show => {
       seasons: '4',
       episodes: '98',
       premiered: '2001-09-26',
+      image: 'http://static.tvmaze.com/uploads/images/original_untouched/6/15045.jpg',
     };
     return object;
   } if (show === 'DIS') {
@@ -52,6 +57,7 @@ const ShowsObject = show => {
       seasons: '2',
       episodes: '29',
       premiered: '2017-09-24',
+      image: 'http://static.tvmaze.com/uploads/images/original_untouched/237/592644.jpg',
     };
     return object;
   }
