@@ -10,14 +10,16 @@ class Seasons extends React.Component {
   }
 
   componentDidMount() {
-    const { show } = this.props.location.state;
+    const { location } = this.props;
+    const { show } = location.state;
     const { getSeasons } = this.props;
     getSeasons(show);
   }
 
   render() {
     const { seasons } = this.props;
-    const { show } = this.props.location.state;
+    const { location } = this.props;
+    const { show } = location.state;
     return seasons.length === 0 ? <div className="">Please wait</div> : (
       <div className="container">
         <div className="card-deck d-flex justify-content-between mt-4">
