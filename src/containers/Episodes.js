@@ -36,7 +36,7 @@ class Episodes extends React.Component {
       <div className="m-4">
         <div>
           <Link to="/" className="btn btn-link mt-3">
-            Back to Home
+            &#60;&#60; Back to Home
           </Link>
           <EpisodeFilter handleFilterChange={this.handleFilterChange} />
         </div>

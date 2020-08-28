@@ -9,16 +9,17 @@ const TVShows = () => (
       <div className="container py-5">
         <h1 className="display-4">All Star Trek TV Shows</h1>
         <p className="lead text-muted">
-          I’ve pulled together our most popular Star Trek TV Shows, Captain Kirk, Captain Picard and all your favourites characters available in one click.
+          I’ve pulled together the most popular Star Trek TV Shows, Captain Kirk, Captain Picard
+          and all your favourites characters available in one click.
         </p>
       </div>
     </section>
     <div className="py-5">
       <main className="container">
         <div className="row">
-          {shows.map((show, index) => (
+          {shows.map(show => (
 
-            <ShowsContainer key={index} show={show} />
+            <ShowsContainer key={show} show={show} />
 
           ))}
         </div>

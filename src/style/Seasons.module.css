@@ -1,7 +1,26 @@
 .wait {
   width: 100%;
-  color: white;
+  color: yellow;
+  background-color: rgb(37, 46, 37);
   height: 25px;
   font-size: larger;
   text-align: center;
+}
+
+.link {
+  margin-left: 10px;
+}
+
+.shadow {
+  width: 100%;
+  margin: 20px auto;
+  border: 5px solid hsl(0, 0%, 40%);
+  padding: 5px;
+  background: hsl(0, 0%, 20%);
+  outline: 5px solid hsl(0, 0%, 60%);
+  box-shadow:
+      0 0 0 10px hsl(0, 0%, 80%),
+      0 0 0 15px hsl(0, 0%, 90%);
+  border-radius: 4px;
+  background-color: #3b3636;
 }
