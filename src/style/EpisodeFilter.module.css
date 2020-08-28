@@ -7,12 +7,12 @@
 }
 
 select {
-  padding-left:150px;
-  height:40px;
-  position:relative;
-  border:1px solid #333;
-  width:350px;
-  display:block;
+  padding-left: 150px;
+  height: 40px;
+  position: relative;
+  border: 1px solid #333;
+  width: 350px;
+  display: block;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -21,19 +21,22 @@ select {
   border-radius: 10px;
   -webkit-box-shadow: none;
 }
+
 label {
-  position:absolute;
-  z-index:1;
-  height:40px;
-  line-height:40px;
-  pointer-events:none;
-  text-indent:10px;
-  font-weight:bold;
+  position: absolute;
+  z-index: 1;
+  height: 40px;
+  line-height: 40px;
+  pointer-events: none;
+  text-indent: 10px;
+  font-weight: bold;
   margin-bottom: 0;
 }
-label, select {
-  font-family:Arial;
-  font-size:15px;
+
+label,
+select {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
 }
 
 option {
