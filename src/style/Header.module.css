@@ -1,7 +1,12 @@
-.header {
-  background-image: url('../assets/images/bg.jpg');
-  height: 20vw;
-  background-size: cover;
+nav {
+  height: 70px;
+}
+
+.image {
+  background-image: url('../assets/images/star-trek-badge.png');
+  width: 40px;
+  height: 40px; 
+  background-size: 100%;
   background-repeat: no-repeat;
   text-align: center;
   border: 0.1rem solid #000;
@@ -9,10 +14,4 @@
   color: #fff;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   opacity: 0.7;
-}
-
-.header span {
-  margin: 1.5rem 1.5rem 2rem 0;
-  display: inline-block;
-  opacity: 1;
 }

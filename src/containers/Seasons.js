@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getSeasons } from '../actions/index';
 import season from '../style/Seasons.module.css';
+import showName from '../helpers/showName';
 
 class Seasons extends React.Component {
   constructor(props) {
@@ -29,44 +30,49 @@ class Seasons extends React.Component {
           </Link>
         </div>
         <div className="card-deck d-flex justify-content-between mt-4">
-          {seasons.map(season => (
-            <Link
-              key={season.id}
-              to={{
-                pathname: `/TVShows/${show}/episodes`,
-                state: {
-                  show,
-                  number: season.number,
-                },
-              }}
-              className=""
-            >
-              <div className="">
-                <div className="card text-white bg-secondary mb-3" style={{ width: '20rem' }}>
-                  <div className="card-header">{show}</div>
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      Season:
-                      {season.number}
-                    </h5>
-                    <ul className="list-group list-group-flush">
-                      <li className="list-group-item">
-                        Number of Episodes:
-                        {season.episodeOrder}
-                      </li>
-                      <li className="list-group-item">
-                        Premiere:
-                        {season.premiereDate}
-                      </li>
-                      <li className="list-group-item">
-                        End Date:
-                        {season.endDate}
-                      </li>
-                    </ul>
-                  </div>
+          {seasons.map((season, index) => (
+
+            <div key={index + 10} className="">
+              <div className="card text-white bg-secondary mb-3" style={{ width: '20rem' }}>
+                <div className="card-header">{showName(show)}</div>
+                <div className="card-body">
+                  <h5 className="card-title">
+                    Season:
+                    {season.number}
+                  </h5>
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item">
+                      Number of Episodes:
+                      {season.episodeOrder}
+                    </li>
+                    <li className="list-group-item">
+                      Premiere:
+                      {season.premiereDate}
+                    </li>
+                    <li className="list-group-item">
+                      End Date:
+                      {season.endDate}
+                    </li>
+                    <li className="list-group-item text-center">
+                      <Link
+                        key={season.id}
+                        to={{
+                          pathname: `/TVShows/${show}/episodes`,
+                          state: {
+                            show,
+                            number: season.number,
+                          },
+                        }}
+                        className="btn btn-dark"
+                      >
+                        Go to Episodes
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </Link>
+            </div>
+
           ))}
         </div>
       </div>

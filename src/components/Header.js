@@ -2,17 +2,12 @@ import React from 'react';
 import header from '../style/Header.module.css';
 
 const Header = () => (
-  <div className={header.header}>
-    <span>S</span>
-    <span>T</span>
-    <span>A</span>
-    <span>R</span>
-    <span>T</span>
-    <span>R</span>
-    <span>E</span>
-    <span>K</span>
-    <div>TV Shows</div>
-  </div>
+  <nav className="navbar navbar-light bg-secondary">
+    <div className="navbar-brand">
+      <div className={header.image} />
+      <p>Star Trek</p>
+    </div>
+  </nav>
 );
 
 export default Header;
