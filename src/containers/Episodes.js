@@ -6,6 +6,7 @@ import { getEpisodes, changeFilter } from '../actions/index';
 import EpisodeFilter from './EpisodeFilter';
 import episode from '../style/Episodes.module.css';
 import FilterEpisodes from '../helpers/FilterEpisodes';
+import stringToHtmlTag from '../helpers/stringToHtmlTag';
 
 class Episodes extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Episodes extends React.Component {
     const { number } = location.state;
     const { episodes, filter } = this.props;
     const filteredEpisodes = FilterEpisodes(filter, episodes);
-    return episodes.length === 0 ? <div className={episode.wait}>Please wait</div> : (
+    return episodes.length === 0 ? <div className={episode.wait}>...Loading...</div> : (
       <div className="m-4">
         <div>
           <Link to="/" className="btn btn-link mt-3">
@@ -45,7 +46,7 @@ class Episodes extends React.Component {
               <img className="card-img-top" src={episode.image.original} alt="Card cap" />
               <div className="card-body">
                 <h5 className="card-title">{episode.name}</h5>
-                <p className="card-text">{episode.summary}</p>
+                <p className="card-text">{stringToHtmlTag(episode.summary)}</p>
               </div>
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
@@ -78,7 +79,7 @@ class Episodes extends React.Component {
                             <img className="card-img-top" src={episode.image.original} alt="Card cap" />
                             <div className="card-body">
                               <h5 className="card-title text-white">{episode.name}</h5>
-                              <p className="card-text text-white">{episode.summary}</p>
+                              <p className="card-text text-white">{stringToHtmlTag(episode.summary)}</p>
                             </div>
                             <ul className="list-group list-group-flush bg-secondary">
                               <li className="list-group-item  text-white">

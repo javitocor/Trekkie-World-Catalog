@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getSeasons } from '../actions/index';
+import season from '../style/Seasons.module.css';
 
 class Seasons extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Seasons extends React.Component {
     const { seasons } = this.props;
     const { location } = this.props;
     const { show } = location.state;
-    return seasons.length === 0 ? <div className="">Please wait</div> : (
+    return seasons.length === 0 ? <div className={season.wait}>...Loading...</div> : (
       <div className="container">
         <div>
           <Link to="/" className="btn btn-link mt-3">

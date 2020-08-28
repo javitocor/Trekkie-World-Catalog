@@ -9,5 +9,9 @@ img {
 }
 
 .wait {
-  
+  width: 100%;
+  color: white;
+  height: 25px;
+  font-size: larger;
+  text-align: center;
 }
