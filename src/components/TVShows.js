@@ -1,29 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ShowsContainer from './ShowsContainer';
 
 const shows = ['TOS', 'TNG', 'VOY', 'DS9', 'ENT', 'DIS'];
 
 const TVShows = () => (
-  <div className="container mt-5 border-dark">
-    <div className="card-deck d-flex justify-content-between">
-      {shows.map(show => (
-        <Link
-          key={show}
-          to={{
-            pathname: `/TVShows/${show}`,
-            state: {
-              show,
-            },
-          }}
-          className=""
-        >
-          <ShowsContainer show={show} />
+  <>
+    <section className="jumbotron jumbotron-fluid text-center">
+      <div className="container py-5">
+        <h1 className="display-4">All Star Trek TV Shows</h1>
+        <p className="lead text-muted">
+          I’ve pulled together our most popular Star Trek TV Shows, Captain Kirk, Captain Picard and all your favourites characters available in one click.
+        </p>
+      </div>
+    </section>
+    <div className="py-5">
+      <main className="container">
+        <div className="row">
+          {shows.map((show, index) => (
 
-        </Link>
-      ))}
+            <ShowsContainer key={index} show={show} />
+
+          ))}
+        </div>
+      </main>
     </div>
-  </div>
+  </>
 );
 
 export default TVShows;

@@ -9,7 +9,7 @@ const App = () => (
   <Router>
     <Switch>
       <>
-        <div className="bg-dark">
+        <div className="">
           <Route path="/" component={Header} />
           <Route exact path="/" component={TVShows} />
           <Route path="/TVShows/:id" exact component={Seasons} />
