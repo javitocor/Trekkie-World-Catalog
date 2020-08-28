@@ -8,6 +8,7 @@ import episode from '../style/Episodes.module.css';
 import FilterEpisodes from '../helpers/FilterEpisodes';
 import stringToHtmlTag from '../helpers/stringToHtmlTag';
 import checkImage from '../helpers/checkImage';
+import notFound from '../assets/images/notfound.jpg';
 
 class Episodes extends React.Component {
   constructor(props) {
