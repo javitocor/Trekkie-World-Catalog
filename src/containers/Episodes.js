@@ -7,6 +7,7 @@ import EpisodeFilter from './EpisodeFilter';
 import episode from '../style/Episodes.module.css';
 import FilterEpisodes from '../helpers/FilterEpisodes';
 import stringToHtmlTag from '../helpers/stringToHtmlTag';
+import checkImage from '../helpers/checkImage';
 
 class Episodes extends React.Component {
   constructor(props) {
@@ -33,36 +34,24 @@ class Episodes extends React.Component {
     const { episodes, filter } = this.props;
     const filteredEpisodes = FilterEpisodes(filter, episodes);
     return episodes.length === 0 ? <div className={episode.wait}>...Loading...</div> : (
-      <div className="m-4">
-        <div>
-          <Link to="/" className="btn btn-link mt-3">
+      <div className={episode.episodesContainer}>
+        <div className={episode.filtering}>
+          <Link to="/" className="btn btn-secondary mt-3">
             &#60;&#60; Back to Home
           </Link>
           <EpisodeFilter handleFilterChange={this.handleFilterChange} />
         </div>
         <div className={episode.episodes}>
           {filteredEpisodes.map(episode => (
-            <div key={episode.id} className="card text-white bg-secondary mb-3" style={{ width: '15rem' }}>
-              <img className="card-img-top" src={episode.image.original} alt="Card cap" />
+            <div key={episode.id} className="card text-white bg-secondary mb-3" style={{ width: '25rem' }}>
+              <img className="card-img-top" src={checkImage(episode)} alt="Card cap" />
               <div className="card-body">
                 <h5 className="card-title">{episode.name}</h5>
                 <p className="card-text">{stringToHtmlTag(episode.summary)}</p>
               </div>
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">
-                  Season:
-                  {episode.season}
-                </li>
-                <li className="list-group-item">
-                  Episode:
-                  {episode.number}
-                </li>
-                <li className="list-group-item">
-                  AirDate:
-                  {episode.airdate}
-                </li>
-                <li className="list-group-item">
-                  <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                <li className="list-group-item m-auto">
+                  <button type="button" className="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
                     View Episode Info
                   </button>
                   <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -75,8 +64,8 @@ class Episodes extends React.Component {
                           </button>
                         </div>
                         <div className="modal-body m-auto">
-                          <div key={episode.id} className="card  bg-secondary" style={{ width: '18rem' }}>
-                            <img className="card-img-top" src={episode.image.original} alt="Card cap" />
+                          <div key={episode.id} className="card  bg-secondary" style={{ width: '23rem' }}>
+                            <img className="card-img-top" src={checkImage(episode)} alt="Card cap" />
                             <div className="card-body">
                               <h5 className="card-title text-white">{episode.name}</h5>
                               <p className="card-text text-white">{stringToHtmlTag(episode.summary)}</p>

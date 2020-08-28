@@ -10,8 +10,21 @@ img {
 
 .wait {
   width: 100%;
-  color: white;
+  color: yellow;
+  background-color: rgb(37, 46, 37);
   height: 25px;
   font-size: larger;
   text-align: center;
+}
+
+.filtering {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+.episodesContainer {
+  
 }

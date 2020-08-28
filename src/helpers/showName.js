@@ -10,7 +10,7 @@ const showName = string => {
   } if (string === 'ENT') {
     return 'Star trek - Enterprise';
   } if (string === 'DIS') {
-    return 'Star trek - Dscovery';
+    return 'Star trek - Discovery';
   }
   return 0;
 };
