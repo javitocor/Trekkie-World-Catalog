@@ -1,5 +1,5 @@
 import episodesReducer from '../../reducers/Episodes';
-import { GET_EPISODES, GET_SEASONS } from '../../actions/index';
+import { GET_EPISODES } from '../../actions/index';
 
 describe('tests episodes reducer', () => {
   test('returns the initial state', () => {
