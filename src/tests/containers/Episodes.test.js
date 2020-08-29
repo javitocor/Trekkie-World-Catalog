@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { render, screen } from '../customRender';
-import Episodes from '../../containers/Seasons';
+import Episodes from '../../containers/Episodes';
 import callAPI from '../../helpers/API';
 
 describe('renders Episodes component', () => {
