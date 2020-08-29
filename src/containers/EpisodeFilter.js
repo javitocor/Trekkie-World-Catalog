@@ -10,7 +10,7 @@ function EpisodeFilter(props) {
   const NumSeasons = [...Array(seasonsLength)].map((_, i) => i + 1);
   const dropMenu = NumSeasons.map(
     number => (
-      <option key={number} value={number}>
+      <option key={number} value={number} data-testid="select-option">
         Season
         {' '}
         {number}
@@ -20,8 +20,8 @@ function EpisodeFilter(props) {
   return (
     <div className={episodeFilter.form}>
       <label htmlFor="filter">Filter by Season</label>
-      <select className="" name="filter" id="filter" onChange={event => handleFilterChange(event)}>
-        <option value="All">All</option>
+      <select className="" name="filter" id="filter" onChange={event => handleFilterChange(event)} data-testid="select">
+        <option value="All" data-testid="select-option">All</option>
         {dropMenu}
       </select>
     </div>
