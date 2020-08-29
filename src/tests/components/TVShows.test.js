@@ -1,10 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import { render } from '../customRender';
 import TVShows from '../../components/TVShows';
 
 describe('<TVShows />', () => {
   it('Renders <TVShows /> component correctly', () => {
-    const { getByText } = render(<TVShows />);
+    const { getByText } = render(<BrowserRouter><TVShows /></BrowserRouter>);
     expect(getByText(/All Star Trek TV Shows/i)).toBeInTheDocument();
   });
 });
