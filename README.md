@@ -46,6 +46,8 @@ Additional description about the project and its features.
 
 [Heroku Live Demo Link](https://trekkieworld.herokuapp.com/) :point_left:
 
+[Presentation Video Link]() :point_left:
+
 ## Getting Started
 - Follow the live demo link and enjoy the site.
 
@@ -84,6 +86,9 @@ To have this app on your pc, you need to:
  - `$ npm run test`
     - Launches the test runner in the interactive watch mode.<br />
     - See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+## Future Features
+- Add characters and cast information.
 
 ## Author
 
