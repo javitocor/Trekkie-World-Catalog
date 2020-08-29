@@ -31,8 +31,6 @@ class Episodes extends React.Component {
   }
 
   render() {
-    const { location } = this.props;
-    const { number } = location.state;
     const { episodes, filter } = this.props;
     const filteredEpisodes = FilterEpisodes(filter, episodes);
     return episodes.length === 0 ? <div className={episode.wait}>...Loading...</div> : (
