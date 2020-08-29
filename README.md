@@ -51,14 +51,14 @@ Additional description about the project and its features.
 
 ### Usage
 To have this app on your pc, you need to:
-* [download](https://github.com/javitocor/calculator-React/archive/development.zip) or clone this repo:
+* [download](https://github.com/javitocor/Trekkie-World-Catalog/archive/development.zip) or clone this repo:
   - Clone with SSH:
   ```
-    git@github.com:javitocor/calculator-React.git
+    git@github.com:javitocor/Trekkie-World-Catalog.git
   ```
   - Clone with HTTPS
   ```
-    https://github.com/javitocor/calculator-React.git
+    https://github.com/javitocor/Trekkie-World-Catalog.git
   ```
 
 * In the project directory, you can run:
@@ -96,7 +96,7 @@ To have this app on your pc, you need to:
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/javitocor/calculator-React/issues).
+Feel free to check the [issues page](https://github.com/javitocor/Trekkie-World-Catalog/issues).
 
 ## Show your support
 
@@ -108,8 +108,8 @@ Give a ⭐️ if you like this project!
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
 - [Heroku Documentation](https://devcenter.heroku.com/)
 - [Heroku Buildpack](https://github.com/mars/create-react-app-buildpack#user-content-requires)
-- [Redux]()
-- [TVMaze API]()
+- [Redux](https://redux.js.org/)
+- [TVMaze API](http://www.tvmaze.com/api)
 
 ## 📝 License
 
@@ -117,11 +117,11 @@ This project is [MIT](lic.url) licensed.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/javitocor/calculator-React.svg?style=flat-square
-[contributors-url]: https://github.com/javitocor/calculator-React/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/javitocor/calculator-React.svg?style=flat-square
-[forks-url]: https://github.com/javitocor/calculator-React/network/members
-[stars-shield]: https://img.shields.io/github/stars/javitocor/calculator-React.svg?style=flat-square
-[stars-url]: https://github.com/javitocor/calculator-React/stargazers
-[issues-shield]: https://img.shields.io/github/issues/javitocor/calculator-React.svg?style=flat-square
-[issues-url]: https://github.com/javitocor/calculator-React/issues
+[contributors-shield]: https://img.shields.io/github/contributors/javitocor/Trekkie-World-Catalog.svg?style=flat-square
+[contributors-url]: https://github.com/javitocor/Trekkie-World-Catalog/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/javitocor/Trekkie-World-Catalog.svg?style=flat-square
+[forks-url]: https://github.com/javitocor/Trekkie-World-Catalog/network/members
+[stars-shield]: https://img.shields.io/github/stars/javitocor/Trekkie-World-Catalog.svg?style=flat-square
+[stars-url]: https://github.com/javitocor/Trekkie-World-Catalog/stargazers
+[issues-shield]: https://img.shields.io/github/issues/javitocor/Trekkie-World-Catalog.svg?style=flat-square
+[issues-url]: https://github.com/javitocor/Trekkie-World-Catalog/issues
