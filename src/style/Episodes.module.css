@@ -26,6 +26,8 @@ img {
 }
 
 .episodesContainer {
+  display: flex;
+  flex-flow: column wrap;
   width: 95%;
   margin: 20px auto;
   border: 5px solid hsl(0, 0%, 40%);
