@@ -43,7 +43,7 @@ class Episodes extends React.Component {
         </div>
         <div className={episode.episodes}>
           {filteredEpisodes.map(episode => (
-            <div key={episode.id} className="card text-white bg-secondary mb-3" style={{ width: '25rem' }}>
+            <div key={episode.id} className="card text-white bg-secondary mb-3" style={{ width: '23rem' }}>
               <img className="card-img-top" src={checkImage(episode)} alt="Card cap" />
               <div className="card-body">
                 <h5 className="card-title">{episode.name}</h5>
