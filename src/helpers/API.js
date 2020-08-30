@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-console */
 import 'regenerator-runtime/runtime';
 
 function getShowId(show) {
