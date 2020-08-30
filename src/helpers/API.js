@@ -29,9 +29,13 @@ const callApi = async (show, season = null) => {
     Url = `${URL + EPISODES}`;
   }
 
-  const response = await fetch(Url, { mode: 'cors' });
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(Url, { mode: 'cors' });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export default callApi;

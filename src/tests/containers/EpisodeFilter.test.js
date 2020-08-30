@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { render, screen } from '../customRender';
+import {
+  render, screen,
+} from '../customRender';
 import EpisodeFilter from '../../containers/EpisodeFilter';
 
 describe('renders EpisodeFilter component', () => {
