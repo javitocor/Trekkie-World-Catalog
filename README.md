@@ -46,7 +46,7 @@ Additional description about the project and its features.
 
 [Heroku Live Demo Link](https://trekkieworld.herokuapp.com/) :point_left:
 
-[Presentation Video Link]() :point_left:
+[Presentation Video Link](https://www.loom.com/share/a862f325acdd4e3c88b6d0e8f24461b1) :point_left:
 
 ## Getting Started
 - Follow the live demo link and enjoy the site.

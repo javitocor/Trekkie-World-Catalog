@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  padding: 0 15px;
 }
 
 img {
@@ -23,6 +24,7 @@ img {
   align-items: center;
   margin-bottom: 1rem;
   justify-content: space-between;
+  padding: 0 15px;
 }
 
 .episodesContainer {
