@@ -23,7 +23,14 @@
 
 >  A catalog where users will find everything related to Star Trek TV shows, built with React&Redux.
 
+You can find the description of the project [here](https://www.notion.so/Catalogue-of-Statistics-72446e7fa33c403a9b6a0bc1de5c6cf5) ("Catalogue of Statistics")
+
+
+Landing Page:
 ![screenshot](./src/assets/screenshot.png)
+
+Episodes Page: 
+![screenshot](./src/assets/screenshot1.png)
 
 Additional description about the project and its features.
 
