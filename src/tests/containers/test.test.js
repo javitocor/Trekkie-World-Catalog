@@ -30,15 +30,4 @@ describe('My Connected React-Redux Component', () => {
   it('should render with given state from Redux store', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
-
-  it('should dispatch an action on button click', () => {
-    renderer.act(() => {
-      component.root.findByType('select').props.onChange({ target: { value: '1' } });
-    });
-
-    expect(store.dispatch).toHaveBeenCalledTimes(1);
-    expect(store.dispatch).toHaveBeenCalledWith(
-      changeFilter({ filter: '1' }),
-    );
-  });
 });
