@@ -1,68 +1,139 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!--
+*** Thanks for checking out this README Template. If you have a suggestion that would
+*** make this better, please fork the repo and create a pull request or simply open
+*** an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-## Available Scripts
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url] 
+[![Forks][forks-shield]][forks-url] 
+[![Stargazers][stars-shield]][stars-url] 
+[![Issues][issues-shield]][issues-url] 
+![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg) 
 
-In the project directory, you can run:
+# Trekkie World Catalog
 
-### `npm start`
+>  A catalog where users will find everything related to Star Trek TV shows, built with React&Redux.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can find the description of the project [here](https://www.notion.so/Catalogue-of-Statistics-72446e7fa33c403a9b6a0bc1de5c6cf5) ("Catalogue of Statistics")
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+Landing Page:
+![screenshot](./src/assets/screenshot.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Episodes Page: 
+![screenshot](./src/assets/screenshot1.png)
 
-### `npm run build`
+Additional description about the project and its features.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built With
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- HTML 
+- CSS
+- JAVASCRIPT
+- NPM
+- REACT
+- REDUX
+- NODE
+- HEROKU
+- ESLINT
+- STYLELINT
+- GITHUB ACTIONS
+- VSCODE
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Live Demo
 
-### `npm run eject`
+[Heroku Live Demo Link](https://trekkieworld.herokuapp.com/) :point_left:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[Presentation Video Link](https://www.loom.com/share/a862f325acdd4e3c88b6d0e8f24461b1) :point_left:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
+- Follow the live demo link and enjoy the site.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Usage
+To have this app on your pc, you need to:
+* [download](https://github.com/javitocor/Trekkie-World-Catalog/archive/development.zip) or clone this repo:
+  - Clone with SSH:
+  ```
+    git@github.com:javitocor/Trekkie-World-Catalog.git
+  ```
+  - Clone with HTTPS
+  ```
+    https://github.com/javitocor/Trekkie-World-Catalog.git
+  ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* In the project directory, you can run:
 
-## Learn More
+  - `$ npm install` - installs all the dependencies required by the project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - `$ npm start` - runs the app in the development mode:
+    - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    - The page will reload if you make edits.
+    - You will also see any lint errors in the console.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - `$ npm run test`
+    - Launches the test runner in the interactive watch mode.
+    - See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Code Splitting
+  - `$ npm run build`
+    - Builds the app for production to the `build` folder.
+    - It correctly bundles React in production mode and optimizes the build for the best performance.
+    - The build is minified and the filenames include the hashes.
+    - Your app is ready to be deployed!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Automated Test
+ - `$ npm run test`
+    - Launches the test runner in the interactive watch mode.<br />
+    - See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Analyzing the Bundle Size
+## Future Features
+- Add characters and cast information.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Author
 
-### Making a Progressive Web App
+👤 Javier Oriol Correas Sanchez Cuesta 
+- Github: [@javitocor](https://github.com/javitocor) 
+- Twitter: [@JavierCorreas4](https://twitter.com/JavierCorreas4) 
+- Linkedin: [Javier Oriol Correas Sanchez Cuesta](https://www.linkedin.com/in/javier-correas-sanchez-cuesta-15289482/) 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## 🤝 Contributing
 
-### Advanced Configuration
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Feel free to check the [issues page](https://github.com/javitocor/Trekkie-World-Catalog/issues).
 
-### Deployment
+## Show your support
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Give a ⭐️ if you like this project!
 
-### `npm run build` fails to minify
+## Acknowledgments 🚀
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [Microverse](https://www.microverse.org/)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [Heroku Documentation](https://devcenter.heroku.com/)
+- [Heroku Buildpack](https://github.com/mars/create-react-app-buildpack#user-content-requires)
+- [Redux](https://redux.js.org/)
+- [TVMaze API](http://www.tvmaze.com/api)
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/javitocor/Trekkie-World-Catalog.svg?style=flat-square
+[contributors-url]: https://github.com/javitocor/Trekkie-World-Catalog/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/javitocor/Trekkie-World-Catalog.svg?style=flat-square
+[forks-url]: https://github.com/javitocor/Trekkie-World-Catalog/network/members
+[stars-shield]: https://img.shields.io/github/stars/javitocor/Trekkie-World-Catalog.svg?style=flat-square
+[stars-url]: https://github.com/javitocor/Trekkie-World-Catalog/stargazers
+[issues-shield]: https://img.shields.io/github/issues/javitocor/Trekkie-World-Catalog.svg?style=flat-square
+[issues-url]: https://github.com/javitocor/Trekkie-World-Catalog/issues

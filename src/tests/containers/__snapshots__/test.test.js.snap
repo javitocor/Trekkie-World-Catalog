@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`My Connected React-Redux Component should render with given state from Redux store 1`] = `
+<div
+  className="form"
+>
+  <label
+    htmlFor="filter"
+  >
+    Filter by Season
+  </label>
+  <select
+    className=""
+    data-testid="select"
+    id="filter"
+    name="filter"
+    onChange={[Function]}
+  >
+    <option
+      data-testid="select-option"
+      value="All"
+    >
+      All
+    </option>
+    <option
+      data-testid="select-option"
+      value={1}
+    >
+      Season
+       
+      1
+    </option>
+  </select>
+</div>
+`;

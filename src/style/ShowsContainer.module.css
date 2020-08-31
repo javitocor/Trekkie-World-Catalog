@@ -1,0 +1,12 @@
+img {
+  height: 100%;
+  width: 400px;
+}
+
+.card_text {
+  word-wrap: break-word !important;
+}
+
+li {
+  background-color: transparent !important;
+}
