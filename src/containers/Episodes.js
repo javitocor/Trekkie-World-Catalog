@@ -3,18 +3,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getEpisodes, changeFilter } from '../actions/index';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
+import { bindActionCreators } from 'redux';
+import { changeFilter } from '../actions/index';
 import EpisodeFilter from './EpisodeFilter';
 import episode from '../style/Episodes.module.css';
 import FilterEpisodes from '../helpers/FilterEpisodes';
 import stringToHtmlTag from '../helpers/stringToHtmlTag';
 import checkImage from '../helpers/checkImage';
 import notFound from '../assets/images/notfound.jpg';
+import callAPI from '../helpers/API';
 
 class Episodes extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      show: false,
+    };
     this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.handleShow = this.handleShow.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +34,18 @@ class Episodes extends React.Component {
     const { show } = location.state;
     const { getEpisodes } = this.props;
     getEpisodes(show);
+  }
+
+  handleClose() {
+    this.setState({
+      show: false,
+    });
+  }
+
+  handleShow() {
+    this.setState({
+      show: true,
+    });
   }
 
   handleFilterChange(event) {
@@ -32,8 +56,8 @@ class Episodes extends React.Component {
 
   render() {
     const { episodes, filter } = this.props;
-    const filteredEpisodes = FilterEpisodes(filter, episodes);
-    return episodes.length === 0 ? <div className={episode.wait}>...Loading...</div> : (
+    const filteredEpisodes = FilterEpisodes(filter, episodes.data);
+    return episodes.data.length === 0 ? <div className={episode.wait}>...Loading...</div> : (
       <div className={episode.episodesContainer}>
         <div className={episode.filtering}>
           <Link to="/" className="btn btn-secondary mt-3">
@@ -57,47 +81,50 @@ class Episodes extends React.Component {
               </div>
               <ul className="list-group list-group-flush">
                 <li className="list-group-item m-auto">
-                  <button type="button" className="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+                  <Button variant="secondary" onClick={() => this.handleShow()}>
                     View Episode Info
-                  </button>
-                  <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog modal-dialog-centered" role="document">
-                      <div className="modal-content  bg-secondary">
-                        <div className="modal-header">
-                          <h5 className="modal-title" id="exampleModalLabel">{episode.name}</h5>
-                          <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div className="modal-body m-auto">
-                          <div key={episode.id} className="card  bg-secondary" style={{ width: '23rem' }}>
-                            <img className="card-img-top" src={checkImage(episode)} alt="Card cap" />
-                            <div className="card-body">
-                              <h5 className="card-title text-white">{episode.name}</h5>
-                              <p className="card-text text-white">{stringToHtmlTag(episode.summary)}</p>
-                            </div>
-                            <ul className="list-group list-group-flush bg-secondary">
-                              <li className="list-group-item  text-white">
-                                Season:
-                                {episode.season}
-                              </li>
-                              <li className="list-group-item  text-white">
-                                Episode:
-                                {episode.number}
-                              </li>
-                              <li className="list-group-item  text-white">
-                                AirDate:
-                                {episode.airdate}
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="modal-footer">
-                          <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  </Button>
+                  <Modal
+                    show={this.state.show}
+                    onHide={this.handleClose}
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                  >
+                    <Modal.Header onClick={this.handleClose}>
+                      <Modal.Title id="contained-modal-title-vcenter">
+                        {episode.name}
+                      </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={checkImage(episode)} />
+                        <Card.Body>
+                          <Card.Title>{episode.name}</Card.Title>
+                          <Card.Text>
+                            {stringToHtmlTag(episode.summary)}
+                          </Card.Text>
+                        </Card.Body>
+                        <ListGroup className="list-group-flush">
+                          <ListGroupItem>
+                            Season:
+                            {episode.season}
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            Episode:
+                            {episode.number}
+                          </ListGroupItem>
+                          <ListGroupItem>
+                            AirDate:
+                            {episode.airdate}
+                          </ListGroupItem>
+                        </ListGroup>
+                      </Card>
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button onClick={this.handleClose}>Close</Button>
+                    </Modal.Footer>
+                  </Modal>
                 </li>
               </ul>
             </div>
@@ -116,23 +143,28 @@ Episodes.propTypes = {
       number: PropTypes.number.isRequired,
     }),
   }).isRequired,
-  episodes: PropTypes.instanceOf(Object).isRequired,
+  episodes: PropTypes.shape({
+    error: PropTypes.string,
+    pending: PropTypes.bool,
+    data: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
   getEpisodes: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
   changeFilter: PropTypes.func.isRequired,
 };
+
 const mapStateToProps = state => ({
-  episodes: state.episodes,
+  episodes: {
+    error: state.episodes.error,
+    data: state.episodes.data,
+    pending: state.episodes.pending,
+  },
   filter: state.filter,
 });
 
-const mapDispatchToProps = dispatch => ({
-  getEpisodes: show => {
-    dispatch(getEpisodes(show));
-  },
-  changeFilter: filter => {
-    dispatch(changeFilter(filter));
-  },
-});
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getEpisodes: callAPI,
+  changeFilter,
+}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Episodes);

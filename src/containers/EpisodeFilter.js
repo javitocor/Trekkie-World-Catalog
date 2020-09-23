@@ -6,7 +6,7 @@ import episodeFilter from '../style/EpisodeFilter.module.css';
 
 function EpisodeFilter(props) {
   const { handleFilterChange, seasons } = props;
-  const seasonsLength = seasons.length;
+  const seasonsLength = seasons.data.length;
   const NumSeasons = [...Array(seasonsLength)].map((_, i) => i + 1);
   const dropMenu = NumSeasons.map(
     number => (
@@ -34,7 +34,11 @@ EpisodeFilter.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  seasons: state.seasons,
+  seasons: {
+    error: state.seasons.error,
+    data: state.seasons.data,
+    pending: state.seasons.pending,
+  },
 });
 
 export default connect(mapStateToProps)(EpisodeFilter);

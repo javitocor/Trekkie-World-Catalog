@@ -1,6 +1,9 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-console */
 import 'regenerator-runtime/runtime';
+import {
+  getEpisodes, getSeasons, getEpisodesError, getEpisodesPending, getSeasonsPending, getSeasonsError,
+} from '../actions/index';
 
 function getShowId(show) {
   if (show === 'TOS') {
@@ -19,7 +22,7 @@ function getShowId(show) {
   return 0;
 }
 
-const callApi = async (show, season = null) => {
+const urlCall = (show, season = null) => {
   const URL = `https://api.tvmaze.com/shows/${getShowId(show)}/`;
   const EPISODES = 'episodes';
   const SEASONS = 'seasons';
@@ -30,13 +33,32 @@ const callApi = async (show, season = null) => {
   } else {
     Url = `${URL + EPISODES}`;
   }
+  return Url;
+};
 
+const callApi = (show, season = null) => async dispatch => {
+  const Url = urlCall(show, season);
   try {
+    if (season !== null) {
+      dispatch(getSeasonsPending());
+    } else {
+      dispatch(getEpisodesPending());
+    }
+
     const response = await fetch(Url, { mode: 'cors' });
     const data = await response.json();
+    if (season !== null) {
+      dispatch(getSeasons(data));
+    } else {
+      dispatch(getEpisodes(data));
+    }
     return data;
   } catch (error) {
-    console.log(error);
+    if (season !== null) {
+      dispatch(getSeasonsError(error));
+    } else {
+      dispatch(getEpisodesError(error));
+    }
   }
 };
 
